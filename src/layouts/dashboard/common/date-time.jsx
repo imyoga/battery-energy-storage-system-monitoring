@@ -16,7 +16,10 @@ export default function DateTime() {
 
 	return (
 		<div>
-			<Typography variant='h6' sx={{color: 'text.secondary'}}>
+			<Typography
+				variant={window.innerWidth > 960 ? 'h6' : 'caption'}
+				sx={{color: 'text.secondary'}}
+			>
 				{dateTime}
 			</Typography>
 		</div>
