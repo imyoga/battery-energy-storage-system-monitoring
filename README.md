@@ -23,7 +23,7 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 
 - Frontend Framework: React with JavaScript (includes prop-types)
 - Real-time updates
-- Charting Library: chart.js
+- Charting Library: apex charts
 - UI Component Library: Material-UI
 - Build Tool: Vite
 
@@ -35,9 +35,9 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 - npm (v10.9 or later)
 - yarn (v1.22.22 or later)
 
-1. Clone the repository:
-### Running the Dev Server
+### Installation
 
+### Running the Dev Server
 1. Clone the repository
 2. Change into the cloned repository
 3. Install dependencies with `yarn`
@@ -48,4 +48,3 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 	- Production build will preview on http://localhost:3031 
 
 ### For more info, refer `package.json`
-
