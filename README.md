@@ -1,4 +1,6 @@
 # BESS Real-Time Monitoring Dashboard
+# [Live Demo of Dashboard](https://battery-energy-storage-system-monitor.netlify.app/)
+https://battery-energy-storage-system-monitor.netlify.app/
 
 ## Overview
 
