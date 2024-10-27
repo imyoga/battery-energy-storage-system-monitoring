@@ -20,6 +20,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 
 import {fToNow} from 'src/utils/format-time'
 
+import {error} from 'src/theme/palette'
+
 import Iconify from 'src/components/iconify'
 import Scrollbar from 'src/components/scrollbar'
 
@@ -28,46 +30,47 @@ import Scrollbar from 'src/components/scrollbar'
 const NOTIFICATIONS = [
 	{
 		id: faker.string.uuid(),
-		title: 'Your order is placed',
-		description: 'waiting for shipping',
+		title: 'Battery Temperature',
+		description:
+			'Battery temperature is fluctuating outside of critical range. Immediate action required to prevent damage',
 		avatar: null,
-		type: 'order_placed',
+		type: 'warning',
 		createdAt: set(new Date(), {hours: 10, minutes: 30}),
 		isUnRead: true,
 	},
 	{
 		id: faker.string.uuid(),
-		title: faker.person.fullName(),
-		description: 'answered to your comment',
+		title: 'Voltage Drop',
+		description: 'Sudden voltage drop across the system detected',
 		avatar: '/assets/images/avatars/avatar_2.jpg',
-		type: 'friend_interactive',
+		type: 'failure',
 		createdAt: sub(new Date(), {hours: 3, minutes: 30}),
 		isUnRead: true,
 	},
 	{
 		id: faker.string.uuid(),
-		title: 'You have new message',
-		description: '5 unread messages',
+		title: 'Inverter Failure',
+		description: 'System operation is compromised; urgent repairs needed',
 		avatar: null,
-		type: 'chat_message',
+		type: 'warning',
 		createdAt: sub(new Date(), {days: 1, hours: 3, minutes: 30}),
 		isUnRead: false,
 	},
 	{
 		id: faker.string.uuid(),
-		title: 'You have new mail',
-		description: 'sent from Guido Padberg',
+		title: 'SOH Degradation',
+		description: 'Schedule maintenance and further diagnostics',
 		avatar: null,
-		type: 'mail',
+		type: 'notification',
 		createdAt: sub(new Date(), {days: 2, hours: 3, minutes: 30}),
 		isUnRead: false,
 	},
 	{
 		id: faker.string.uuid(),
-		title: 'Delivery processing',
-		description: 'Your order is being shipped',
+		title: 'Unusual Charging Patterns',
+		description: 'Investigate potential issues with load or generation sources',
 		avatar: null,
-		type: 'order_shipped',
+		type: 'alert',
 		createdAt: sub(new Date(), {days: 3, hours: 3, minutes: 30}),
 		isUnRead: false,
 	},
@@ -263,54 +266,15 @@ function renderContent(notification) {
 		</Typography>
 	)
 
-	if (notification.type === 'order_placed') {
-		return {
-			avatar: (
-				<img
-					alt={notification.title}
-					src='/assets/icons/ic_notification_package.svg'
-				/>
-			),
-			title,
-		}
+	const typeToIcon = {
+		warning: <Iconify icon='fxemoji:warningsign' />,
+		failure: <Iconify icon='tabler:refresh-alert' sx={{color: error.main}} />,
+		notification: <Iconify icon='fluent-color:alert-24' />,
+		alert: <Iconify icon='fluent-color:error-circle-16' />,
 	}
-	if (notification.type === 'order_shipped') {
-		return {
-			avatar: (
-				<img
-					alt={notification.title}
-					src='/assets/icons/ic_notification_shipping.svg'
-				/>
-			),
-			title,
-		}
-	}
-	if (notification.type === 'mail') {
-		return {
-			avatar: (
-				<img
-					alt={notification.title}
-					src='/assets/icons/ic_notification_mail.svg'
-				/>
-			),
-			title,
-		}
-	}
-	if (notification.type === 'chat_message') {
-		return {
-			avatar: (
-				<img
-					alt={notification.title}
-					src='/assets/icons/ic_notification_chat.svg'
-				/>
-			),
-			title,
-		}
-	}
+
 	return {
-		avatar: notification.avatar ? (
-			<img alt={notification.title} src={notification.avatar} />
-		) : null,
+		avatar: typeToIcon[notification.type],
 		title,
 	}
 }

@@ -23,12 +23,24 @@ export default function SystemStatus() {
 		return () => clearInterval(interval)
 	}, [statuses])
 
+	const isMdUp = window.innerWidth > 960
+
 	return (
 		<div>
-			<Typography variant='h6' sx={{color: 'text.primary'}}>
+			<Typography
+				variant={isMdUp ? 'h6' : 'body2'}
+				sx={{
+					color: 'text.primary',
+				}}
+			>
 				System Status:
 			</Typography>
-			<Typography variant='h6' sx={{color: currentStatus.color}}>
+			<Typography
+				variant={isMdUp ? 'h6' : 'body2'}
+				sx={{
+					color: currentStatus.color,
+				}}
+			>
 				{currentStatus.status}
 			</Typography>
 		</div>

@@ -1,17 +1,17 @@
 import {Helmet} from 'react-helmet-async'
 
-import {ProductsView} from 'src/sections/products/view'
+import {UiKitView} from 'src/sections/uikit/view'
 
 // ----------------------------------------------------------------------
 
-export default function ProductsPage() {
+export default function UiKitPAge() {
 	return (
 		<>
 			<Helmet>
-				<title> Products | BESS UI </title>
+				<title> UI Kit | BESS UI </title>
 			</Helmet>
 
-			<ProductsView />
+			<UiKitView />
 		</>
 	)
 }
