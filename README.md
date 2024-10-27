@@ -4,6 +4,8 @@
 
 This repository contains the frontend code for a real-time monitoring dashboard designed for Battery Energy Storage System (BESS) installations. The dashboard provides a comprehensive view of BESS performance, status, and key operational metrics.
 
+<img src="./public/assets/readme/Thumbnail.png" height='300'>
+
 ## Features
 
 - Real-time monitoring of BESS installation
@@ -18,7 +20,7 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 ## Technology Stack
 
 - Frontend Framework: React with JavaScript (includes prop-types)
-- Real-time Communication: Socket.io
+- Real-time updates
 - Charting Library: chart.js
 - UI Component Library: Material-UI
 - Build Tool: Vite
@@ -27,9 +29,8 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 
 ### Prerequisites
 
-- Node.js (v14 or later)
-- npm (v6 or later)
+- Node.js (v22 or later)
+- npm (v10.9 or later)
+- yarn (v1.22.22 or later)
 
-### Installation
-
-1. Clone the repository:
+###
