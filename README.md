@@ -35,4 +35,15 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 - npm (v10.9 or later)
 - yarn (v1.22.22 or later)
 
-###
+### Running the Dev Server
+
+1. Clone the repository
+2. Change into the cloned repository
+3. Install dependencies with `yarn`
+4. Start the development server with `yarn dev`
+	- Dev serever will be running on http://localhost:3030
+5. Build this project with `yarn build`
+6. To preview production build, `yarn start`
+	- Production build will preview on http://localhost:3031 
+
+### For more info, refer `package.json`
