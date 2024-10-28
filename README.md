@@ -35,6 +35,7 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 - npm (v10.9 or later)
 - yarn (v1.22.22 or later)
 
+1. Clone the repository:
 ### Running the Dev Server
 
 1. Clone the repository
@@ -47,3 +48,4 @@ This repository contains the frontend code for a real-time monitoring dashboard 
 	- Production build will preview on http://localhost:3031 
 
 ### For more info, refer `package.json`
+
